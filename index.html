@@ -80,6 +80,7 @@
       font-weight: 800;
       color: #6f7785;
       margin-bottom: 16px;
+      text-transform: uppercase;
     }
 
     .hero h1 {
@@ -137,34 +138,19 @@
       border: 1px solid #dce1e7;
     }
 
-    /* HERO PRODUCT PLACEHOLDER */
+    /* HERO PRODUCT IMAGE */
     .hero-product {
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    .net-placeholder {
+    .hero-img {
       width: min(420px, 85vw);
       height: 420px;
-      border-radius: 48% 48% 12% 12%;
-      background:
-        repeating-linear-gradient(
-          90deg,
-          rgba(255,255,255,0.7) 0px,
-          rgba(255,255,255,0.7) 2px,
-          transparent 2px,
-          transparent 26px
-        ),
-        linear-gradient(145deg, #effffb, #a7ddcf);
-      box-shadow: 0 30px 70px rgba(35,80,75,0.15);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #557c74;
-      font-weight: 800;
-      text-align: center;
-      padding: 20px;
+      border-radius: 30px;
+      object-fit: cover;
+      box-shadow: 0 30px 70px rgba(35,80,75,0.18);
     }
 
     /* TRUST STRIP */
@@ -208,10 +194,18 @@
     }
 
     /* PRODUCTS */
+    .category-heading {
+      font-size: 28px;
+      font-weight: 800;
+      margin: 40px 0 20px;
+      color: #14233f;
+    }
+
     .products {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 25px;
+      margin-bottom: 50px;
     }
 
     .product-card {
@@ -220,28 +214,33 @@
       overflow: hidden;
       border: 1px solid #eee7e3;
       box-shadow: 0 15px 40px rgba(20,35,63,0.05);
+      display: flex;
+      flex-direction: column;
     }
 
     .product-image {
-      height: 320px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-weight: 800;
-      color: #557c74;
+      height: 300px;
+      width: 100%;
+      overflow: hidden;
     }
 
-    .printed-image {
-      background: linear-gradient(135deg, #f8c0d1, #bceee2);
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
     }
 
-    .premium-image {
-      background: linear-gradient(135deg, #dbe9e5, #edf0f5);
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
     }
 
     .product-info {
-      padding: 27px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
     }
 
     .tag {
@@ -249,73 +248,38 @@
       font-weight: 800;
       letter-spacing: 2px;
       color: #dc6d91;
+      text-transform: uppercase;
     }
 
     .product-info h3 {
-      font-size: 28px;
-      margin: 8px 0 2px;
+      font-size: 22px;
+      margin: 6px 0 2px;
     }
 
     .product-info p {
       color: #697586;
-    }
-
-    .swatches {
-      display: flex;
-      gap: 9px;
-      margin: 17px 0 4px;
-    }
-
-    .swatch {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      border: 2px solid white;
-      box-shadow: 0 0 0 1px #ddd;
-    }
-
-    .pink {
-      background: #f2a9c2;
-    }
-
-    .dark-pink {
-      background: #ca5278;
-    }
-
-    .mint {
-      background: #91d9c9;
-    }
-
-    .neutral1 {
-      background: #d6dedb;
-    }
-
-    .neutral2 {
-      background: #9ca8b2;
-    }
-
-    .neutral3 {
-      background: #edd1c6;
+      font-size: 14px;
     }
 
     .product-bottom {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: 22px;
+      margin-top: 20px;
     }
 
     .price {
-      font-size: 25px;
+      font-size: 24px;
       font-weight: 800;
     }
 
     .order-small {
       background: #14233f;
       color: white;
-      padding: 11px 19px;
+      padding: 10px 20px;
       border-radius: 30px;
       font-weight: 700;
+      font-size: 14px;
     }
 
     /* BENEFITS */
@@ -471,9 +435,10 @@
         order: -1;
       }
 
-      .net-placeholder {
-        width: 290px;
-        height: 290px;
+      .hero-img {
+        width: 100%;
+        max-width: 320px;
+        height: 320px;
       }
 
       .hero h1 {
@@ -588,10 +553,7 @@
     </div>
 
     <div class="hero-product">
-      <div class="net-placeholder">
-        PRODUCT PHOTO<br>
-        ADD YOUR MOSQUITO NET PHOTO HERE
-      </div>
+      <img src="Premium-mosquito-net-pink.jpeg" alt="Premium Mosquito Net Pink" class="hero-img">
     </div>
 
   </section>
@@ -616,89 +578,157 @@
       </p>
     </div>
 
+    <!-- PREMIUM SERIES -->
+    <h3 class="category-heading">Premium Series</h3>
     <div class="products">
 
-      <!-- PRINTED -->
+      <!-- Premium Orange -->
       <article class="product-card">
-
-        <div class="product-image printed-image">
-          PRODUCT PHOTO
+        <div class="product-image">
+          <img src="Premium-mosquito-net-orange.jpeg" alt="Premium Mosquito Net Orange">
         </div>
-
         <div class="product-info">
-
-          <div class="tag">BEST VALUE</div>
-
-          <h3>Printed Mosquito Net</h3>
-
-          <p>Size: 6 × 7 ft</p>
-
-          <div class="swatches">
-            <span class="swatch pink"></span>
-            <span class="swatch dark-pink"></span>
-            <span class="swatch mint"></span>
+          <div>
+            <div class="tag">PREMIUM</div>
+            <h3>Premium Net — Orange</h3>
+            <p>Sizes: 5 × 7 ft · 6 × 7 ft</p>
           </div>
-
-          <p>Pink · Dark Pink · Mint</p>
-
           <div class="product-bottom">
-
-            <div class="price">
-              ৳699
-            </div>
-
+            <div class="price">৳1,070</div>
             <a
-              href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20the%20Printed%20Mosquito%20Net%2C%206x7%20ft.%20Please%20confirm%20availability."
+              href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20the%20Premium%20Mosquito%20Net%20in%20Orange."
               target="_blank"
               class="order-small"
             >
               Order
             </a>
-
           </div>
-
         </div>
       </article>
 
-      <!-- PREMIUM -->
+      <!-- Premium Dark Pink -->
       <article class="product-card">
-
-        <div class="product-image premium-image">
-          PRODUCT PHOTO
+        <div class="product-image">
+          <img src="Premium-mosquito-net-dark-pink.jpeg" alt="Premium Mosquito Net Dark Pink">
         </div>
-
         <div class="product-info">
-
-          <div class="tag">PREMIUM</div>
-
-          <h3>Premium Mosquito Net</h3>
-
-          <p>Sizes: 5 × 7 ft · 6 × 7 ft</p>
-
-          <div class="swatches">
-            <span class="swatch neutral1"></span>
-            <span class="swatch neutral2"></span>
-            <span class="swatch neutral3"></span>
+          <div>
+            <div class="tag">PREMIUM</div>
+            <h3>Premium Net — Dark Pink</h3>
+            <p>Sizes: 5 × 7 ft · 6 × 7 ft</p>
           </div>
-
-          <p>Available colors — confirm on WhatsApp</p>
-
           <div class="product-bottom">
-
-            <div class="price">
-              ৳1,070
-            </div>
-
+            <div class="price">৳1,070</div>
             <a
-              href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20the%20Premium%20Mosquito%20Net.%20Please confirm available size and color."
+              href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20the%20Premium%20Mosquito%20Net%20in%20Dark%20Pink."
               target="_blank"
               class="order-small"
             >
               Order
             </a>
-
           </div>
+        </div>
+      </article>
 
+      <!-- Premium Pink -->
+      <article class="product-card">
+        <div class="product-image">
+          <img src="Premium-mosquito-net-pink.jpeg" alt="Premium Mosquito Net Pink">
+        </div>
+        <div class="product-info">
+          <div>
+            <div class="tag">PREMIUM</div>
+            <h3>Premium Net — Pink</h3>
+            <p>Sizes: 5 × 7 ft · 6 × 7 ft</p>
+          </div>
+          <div class="product-bottom">
+            <div class="price">৳1,070</div>
+            <a
+              href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20the%20Premium%20Mosquito%20Net%20in%20Pink."
+              target="_blank"
+              class="order-small"
+            >
+              Order
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- PRINTED SERIES -->
+    <h3 class="category-heading">Printed Series</h3>
+    <div class="products">
+
+      <!-- Printed Mint -->
+      <article class="product-card">
+        <div class="product-image">
+          <img src="Printed-mosquito-net-mint.jpeg" alt="Printed Mosquito Net Mint">
+        </div>
+        <div class="product-info">
+          <div>
+            <div class="tag">BEST VALUE</div>
+            <h3>Printed Net — Mint</h3>
+            <p>Size: 6 × 7 ft</p>
+          </div>
+          <div class="product-bottom">
+            <div class="price">৳699</div>
+            <a
+              href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20the%20Printed%20Mosquito%20Net%20in%20Mint."
+              target="_blank"
+              class="order-small"
+            >
+              Order
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Printed Pink -->
+      <article class="product-card">
+        <div class="product-image">
+          <img src="Printed-mosquito-net-pink.jpeg" alt="Printed Mosquito Net Pink">
+        </div>
+        <div class="product-info">
+          <div>
+            <div class="tag">BEST VALUE</div>
+            <h3>Printed Net — Pink</h3>
+            <p>Size: 6 × 7 ft</p>
+          </div>
+          <div class="product-bottom">
+            <div class="price">৳699</div>
+            <a
+              href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20the%20Printed%20Mosquito%20Net%20in%20Pink."
+              target="_blank"
+              class="order-small"
+            >
+              Order
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Printed Light Pink -->
+      <article class="product-card">
+        <div class="product-image">
+          <img src="Printed-mosquito-net-light-pink.jpeg" alt="Printed Mosquito Net Light Pink">
+        </div>
+        <div class="product-info">
+          <div>
+            <div class="tag">BEST VALUE</div>
+            <h3>Printed Net — Light Pink</h3>
+            <p>Size: 6 × 7 ft</p>
+          </div>
+          <div class="product-bottom">
+            <div class="price">৳699</div>
+            <a
+              href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20the%20Printed%20Mosquito%20Net%20in%20Light%20Pink."
+              target="_blank"
+              class="order-small"
+            >
+              Order
+            </a>
+          </div>
         </div>
       </article>
 
