@@ -1,916 +1,697 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Active BD Online | Premium Mosquito Nets</title>
-  <meta name="description" content="Premium mosquito nets by Active BD Online. Cash on Delivery available across Bangladesh.">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Active BD Online | Premium Mosquito Nets in Bangladesh</title>
+  <meta name="description" content="Shop durable, high-density mosquito nets in Bangladesh. Starting at ৳699. Cash on delivery available nationwide." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandNavy: '#0f2744',
+            brandNavyDark: '#081728',
+            brandMint: '#0d9488',
+            brandMintLight: '#e6f7f5',
+            brandPink: '#ec4899',
+            brandPinkSoft: '#fdf2f8',
+            brandGreen: '#25D366',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #14233f;
-      background: #fffaf7;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    /* NAVBAR */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255,250,247,0.96);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #eee5e1;
-      padding: 18px 7%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 21px;
-      font-weight: 800;
-      color: #14233f;
-    }
-
-    .logo span {
-      color: #e47799;
-    }
-
-    .nav-button {
-      background: #14233f;
-      color: white;
-      padding: 11px 20px;
-      border-radius: 30px;
-      font-weight: 700;
-      font-size: 14px;
-    }
-
-    /* HERO */
-    .hero {
-      min-height: 680px;
-      padding: 70px 7%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 50px;
-      background:
-        linear-gradient(120deg, #fffaf7 0%, #fffaf7 53%, #c5f0e5 53%, #c5f0e5 100%);
-    }
-
-    .eyebrow {
-      font-size: 13px;
-      letter-spacing: 3px;
-      font-weight: 800;
-      color: #6f7785;
-      margin-bottom: 16px;
-      text-transform: uppercase;
-    }
-
-    .hero h1 {
-      font-size: clamp(48px, 6vw, 88px);
-      line-height: 0.98;
-      letter-spacing: -4px;
-      margin-bottom: 25px;
-    }
-
-    .hero h1 span {
-      font-family: Georgia, serif;
-      font-style: italic;
-      color: #e47799;
-      font-weight: 600;
-    }
-
-    .hero-text {
-      max-width: 560px;
-      color: #697586;
-      font-size: 18px;
-      margin-bottom: 18px;
-    }
-
-    .starting {
-      color: #697586;
-      margin-bottom: 25px;
-    }
-
-    .starting strong {
-      color: #14233f;
-      font-size: 26px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 15px 24px;
-      border-radius: 40px;
-      font-weight: 800;
-    }
-
-    .primary {
-      background: #14233f;
-      color: white;
-    }
-
-    .secondary {
-      background: white;
-      color: #14233f;
-      border: 1px solid #dce1e7;
-    }
-
-    /* HERO PRODUCT IMAGE */
-    .hero-product {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hero-img {
-      width: min(420px, 85vw);
-      height: 420px;
-      border-radius: 30px;
-      object-fit: cover;
-      box-shadow: 0 30px 70px rgba(35,80,75,0.18);
-    }
-
-    /* TRUST STRIP */
-    .trust {
-      background: #14233f;
-      color: white;
-      padding: 23px 7%;
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 15px;
-      text-align: center;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .trust span {
-      color: #bff0e2;
-      margin-right: 5px;
-    }
-
-    /* SECTIONS */
-    section.content {
-      padding: 90px 7%;
-    }
-
-    .section-title {
-      max-width: 700px;
-      margin-bottom: 45px;
-    }
-
-    .section-title h2 {
-      font-size: clamp(38px, 5vw, 64px);
-      line-height: 1;
-      letter-spacing: -2px;
-      margin-bottom: 15px;
-    }
-
-    .section-title p {
-      color: #697586;
-      font-size: 17px;
-    }
-
-    /* PRODUCTS */
-    .category-heading {
-      font-size: 28px;
-      font-weight: 800;
-      margin: 40px 0 20px;
-      color: #14233f;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-      margin-bottom: 50px;
-    }
-
-    .product-card {
-      background: white;
-      border-radius: 25px;
-      overflow: hidden;
-      border: 1px solid #eee7e3;
-      box-shadow: 0 15px 40px rgba(20,35,63,0.05);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .product-image {
-      height: 300px;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .product-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .product-card:hover .product-image img {
-      transform: scale(1.05);
-    }
-
-    .product-info {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      justify-content: space-between;
-    }
-
-    .tag {
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      color: #dc6d91;
-      text-transform: uppercase;
-    }
-
-    .product-info h3 {
-      font-size: 22px;
-      margin: 6px 0 2px;
-    }
-
-    .product-info p {
-      color: #697586;
-      font-size: 14px;
-    }
-
-    .product-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 20px;
-    }
-
-    .price {
-      font-size: 24px;
-      font-weight: 800;
-    }
-
-    .order-small {
-      background: #14233f;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 30px;
-      font-weight: 700;
-      font-size: 14px;
-    }
-
-    /* BENEFITS */
-    .mint-section {
-      background: #c5f0e5;
-    }
-
-    .benefits {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .benefit {
-      background: white;
-      padding: 25px;
-      border-radius: 20px;
-    }
-
-    .benefit-number {
-      color: #de7192;
-      font-weight: 800;
-    }
-
-    .benefit h3 {
-      margin: 35px 0 8px;
-      font-size: 20px;
-    }
-
-    .benefit p {
-      color: #697586;
-    }
-
-    /* HOW TO ORDER */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .step {
-      background: white;
-      border: 1px solid #eee7e3;
-      border-radius: 20px;
-      padding: 27px;
-    }
-
-    .step-number {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      background: #f7bfd0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-    }
-
-    .step h3 {
-      margin-top: 28px;
-    }
-
-    .step p {
-      color: #697586;
-      margin-top: 5px;
-    }
-
-    /* DELIVERY */
-    .delivery {
-      background: #fff0f4;
-    }
-
-    .delivery-box {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-    }
-
-    .delivery-card {
-      background: white;
-      border-radius: 22px;
-      padding: 30px;
-    }
-
-    .delivery-card h3 {
-      font-size: 25px;
-      margin-bottom: 7px;
-    }
-
-    .delivery-card p {
-      color: #697586;
-    }
-
-    /* FAQ */
-    .faq details {
-      border-top: 1px solid #e7dfdb;
-      padding: 20px 0;
-    }
-
-    .faq summary {
-      cursor: pointer;
-      font-weight: 800;
-      font-size: 17px;
-    }
-
-    .faq p {
-      color: #697586;
-      margin-top: 12px;
-    }
-
-    /* CTA */
-    .final-cta {
-      background: #f7bfd0;
-      text-align: center;
-      padding: 100px 7%;
-    }
-
-    .final-cta h2 {
-      font-size: clamp(40px, 6vw, 78px);
-      line-height: 1;
-      letter-spacing: -3px;
-      margin-bottom: 30px;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #14233f;
-      color: white;
-      padding: 45px 7%;
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    footer p {
-      color: #b7c1cf;
-      margin-top: 7px;
-    }
-
-    footer a {
-      color: #bff0e2;
-    }
-
-    /* MOBILE */
-    @media (max-width: 850px) {
-      .hero {
-        grid-template-columns: 1fr;
-        background: #fffaf7;
-        padding-top: 55px;
-      }
-
-      .hero-product {
-        order: -1;
-      }
-
-      .hero-img {
-        width: 100%;
-        max-width: 320px;
-        height: 320px;
-      }
-
-      .hero h1 {
-        letter-spacing: -2px;
-      }
-
-      .trust {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .products,
-      .delivery-box,
-      .steps {
-        grid-template-columns: 1fr;
-      }
-
-      .benefits {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      footer {
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 520px) {
-      nav {
-        padding: 15px 5%;
-      }
-
-      .hero,
-      section.content,
-      .final-cta {
-        padding-left: 5%;
-        padding-right: 5%;
-      }
-
-      .hero h1 {
-        font-size: 48px;
-      }
-
-      .buttons {
-        flex-direction: column;
-      }
-
-      .button {
-        text-align: center;
-      }
-
-      .trust {
-        padding-left: 5%;
-        padding-right: 5%;
-        grid-template-columns: 1fr;
-      }
-
-      .benefits {
-        grid-template-columns: 1fr;
-      }
-
-      .section-title h2 {
-        font-size: 42px;
-      }
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
   </style>
 </head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brandMint selection:text-white">
 
-<body>
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <aside aria-label="Announcement" class="bg-brandNavyDark text-white text-xs sm:text-sm py-2 px-4 text-center font-medium">
+    <div class="max-w-6xl mx-auto flex items-center justify-center gap-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span>🇧🇩 Delivery all over Bangladesh • <strong>Cash on Delivery Available</strong></span>
+    </div>
+  </aside>
 
   <!-- NAVBAR -->
-  <nav>
-    <a href="#top" class="logo">
-      Active <span>BD</span> Online
-    </a>
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo Area with Intelligent Fallback -->
+      <a href="#" class="flex items-center gap-2.5">
+        <img 
+          id="brand-logo-img"
+          src="logo" 
+          alt="Active BD Online Logo" 
+          class="h-10 sm:h-12 w-auto max-w-[140px] sm:max-w-[170px] object-contain rounded"
+          onerror="handleLogoLoadError(this)"
+        />
+        <!-- Clean Styled Fallback if file extension is still resolving -->
+        <div id="text-logo-fallback" class="hidden items-center gap-2">
+          <div class="w-9 h-9 rounded-lg bg-brandNavy flex items-center justify-center text-white font-black text-xl shadow-sm">
+            A
+          </div>
+          <div class="flex flex-col">
+            <span class="font-extrabold text-brandNavy text-base sm:text-lg tracking-tight leading-tight">ACTIVE BD</span>
+            <span class="text-[10px] text-brandMint font-bold uppercase tracking-widest leading-none">Online Store</span>
+          </div>
+        </div>
+      </a>
 
-    <a href="#products" class="nav-button">
-      Shop Now
-    </a>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero" id="top">
-
-    <div>
-      <p class="eyebrow">PREMIUM MOSQUITO NETS 🇧🇩</p>
-
-      <h1>
-        Sleep comfortably.<br>
-        <span>Stay protected.</span>
-      </h1>
-
-      <p class="hero-text">
-        Quality mosquito nets in beautiful colors, delivered across Bangladesh with Cash on Delivery.
-      </p>
-
-      <p class="starting">
-        Starting from <strong>৳699</strong>
-      </p>
-
-      <div class="buttons">
-        <a href="#products" class="button primary">
-          Shop Now
+      <!-- Quick Navigation -->
+      <div class="flex items-center gap-3 sm:gap-5">
+        <a href="#products" class="text-xs sm:text-sm font-semibold text-slate-700 hover:text-brandMint transition">
+          Products
         </a>
-
-        <a
-          href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20to%20order%20a%20mosquito%20net."
+        <a href="#delivery" class="hidden sm:inline text-xs sm:text-sm font-semibold text-slate-700 hover:text-brandMint transition">
+          Delivery & COD
+        </a>
+        <a 
+          href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20to%20order%20a%20mosquito%20net." 
           target="_blank"
-          class="button secondary"
-        >
+          class="inline-flex items-center justify-center px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-brandNavy text-white font-semibold text-xs sm:text-sm shadow-md hover:bg-slate-800 transition active:scale-95">
           Order on WhatsApp
         </a>
       </div>
     </div>
+  </header>
 
-    <div class="hero-product">
-      <img src="Premium-mosquito-net-pink.jpeg" alt="Premium Mosquito Net Pink" class="hero-img">
+  <!-- HERO SECTION -->
+  <section class="relative overflow-hidden pt-8 pb-14 sm:pt-16 sm:pb-20 bg-gradient-to-b from-brandMintLight/40 via-white to-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        <!-- Hero Text -->
+        <div class="lg:col-span-7 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brandPinkSoft border border-pink-200 text-brandPink text-xs sm:text-sm font-bold mb-4">
+            <span>✨ 100% Quality Protected Sleep</span>
+          </div>
+          
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-brandNavy leading-tight tracking-tight mb-4">
+            Sleep Comfortably. <br class="hidden sm:inline" />
+            <span class="text-brandMint">Stay Protected</span> All Night.
+          </h1>
+          
+          <p class="text-sm sm:text-lg text-slate-600 mb-6 max-w-xl mx-auto lg:mx-0">
+            Keep dengue and mosquito bites away from your family. Durable, breathable nets engineered for cool airflow and long-lasting durability.
+          </p>
+          
+          <div class="flex items-baseline justify-center lg:justify-start gap-2 mb-8">
+            <span class="text-slate-500 text-sm font-medium">Starting from only</span>
+            <span class="text-3xl sm:text-4xl font-black text-brandNavy">৳699</span>
+            <span class="text-xs bg-emerald-100 text-emerald-800 font-bold px-2.5 py-1 rounded-md">Cash on Delivery</span>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4">
+            <a 
+              href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20am%20interested%20in%20ordering%20a%20mosquito%20net.%20Please%20guide%20me." 
+              target="_blank" 
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-brandGreen text-white font-bold text-base shadow-lg shadow-emerald-500/20 hover:bg-emerald-600 transition active:scale-95">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
+              <span>Order on WhatsApp</span>
+            </a>
+            
+            <a 
+              href="#products" 
+              class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-white border border-slate-300 text-brandNavy font-bold text-base hover:bg-slate-100 transition active:scale-95">
+              View Products
+            </a>
+          </div>
+          
+          <div class="mt-6 flex items-center justify-center lg:justify-start gap-4 text-xs text-slate-500 font-semibold">
+            <span class="flex items-center gap-1">
+              <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Quick Delivery
+            </span>
+            <span class="flex items-center gap-1">
+              <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Pay on Delivery
+            </span>
+          </div>
+        </div>
+
+        <!-- Featured Visual Card -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-sm sm:max-w-md rounded-2xl overflow-hidden shadow-2xl bg-white border-4 border-white">
+            <img 
+              id="hero-img" 
+              src="Premium_mosquito_net_Dark_pink.jpeg" 
+              alt="Premium Mosquito Net" 
+              class="w-full h-80 sm:h-96 object-cover object-center"
+            />
+            <div class="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur p-3 rounded-xl shadow-md flex items-center justify-between">
+              <div>
+                <p class="text-xs text-slate-500 font-medium">Customer Favorite</p>
+                <p class="text-sm font-bold text-brandNavy">Premium Mosquito Net</p>
+              </div>
+              <span class="px-3 py-1 bg-brandNavy text-white font-black text-xs rounded-lg">৳1,070</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-
   </section>
 
-  <!-- TRUST -->
-  <div class="trust">
-    <div><span>✓</span> Durable</div>
-    <div><span>✓</span> Easy Setup</div>
-    <div><span>✓</span> Comfortable</div>
-    <div><span>✓</span> Nationwide Delivery</div>
-    <div><span>✓</span> Cash on Delivery</div>
-  </div>
+  <!-- TRUST STRIP -->
+  <section class="bg-white border-y border-slate-200 py-6">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
+        
+        <div class="p-3">
+          <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-teal-50 text-brandMint flex items-center justify-center font-bold text-lg">
+            🛡️
+          </div>
+          <h2 class="text-sm font-bold text-slate-800">Durable Mesh</h2>
+          <p class="text-xs text-slate-500 mt-0.5">Tear-resistant fine netting</p>
+        </div>
 
-  <!-- PRODUCTS -->
-  <section class="content" id="products">
+        <div class="p-3">
+          <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-pink-50 text-brandPink flex items-center justify-center font-bold text-lg">
+            💨
+          </div>
+          <h2 class="text-sm font-bold text-slate-800">Cool Airflow</h2>
+          <p class="text-xs text-slate-500 mt-0.5">Breathable for restful nights</p>
+        </div>
 
-    <div class="section-title">
-      <p class="eyebrow">OUR COLLECTION</p>
-      <h2>Find your perfect net.</h2>
-      <p>
-        Choose your size and color, then order directly through WhatsApp.
-      </p>
+        <div class="p-3">
+          <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-blue-50 text-brandNavy flex items-center justify-center font-bold text-lg">
+            🚚
+          </div>
+          <h2 class="text-sm font-bold text-slate-800">All Bangladesh</h2>
+          <p class="text-xs text-slate-500 mt-0.5">Dhaka ৳70 • Outside ৳150</p>
+        </div>
+
+        <div class="p-3">
+          <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-lg">
+            💵
+          </div>
+          <h2 class="text-sm font-bold text-slate-800">Cash on Delivery</h2>
+          <p class="text-xs text-slate-500 mt-0.5">Pay only upon receipt</p>
+        </div>
+
+      </div>
     </div>
-
-    <!-- PREMIUM SERIES -->
-    <h3 class="category-heading">Premium Series</h3>
-    <div class="products">
-
-      <!-- Premium Orange -->
-      <article class="product-card">
-        <div class="product-image">
-          <img src="Premium-mosquito-net-orange.jpeg" alt="Premium Mosquito Net Orange">
-        </div>
-        <div class="product-info">
-          <div>
-            <div class="tag">PREMIUM</div>
-            <h3>Premium Net — Orange</h3>
-            <p>Sizes: 5 × 7 ft · 6 × 7 ft</p>
-          </div>
-          <div class="product-bottom">
-            <div class="price">৳1,070</div>
-            <a
-              href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20the%20Premium%20Mosquito%20Net%20in%20Orange."
-              target="_blank"
-              class="order-small"
-            >
-              Order
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Premium Dark Pink -->
-      <article class="product-card">
-        <div class="product-image">
-          <img src="Premium-mosquito-net-dark-pink.jpeg" alt="Premium Mosquito Net Dark Pink">
-        </div>
-        <div class="product-info">
-          <div>
-            <div class="tag">PREMIUM</div>
-            <h3>Premium Net — Dark Pink</h3>
-            <p>Sizes: 5 × 7 ft · 6 × 7 ft</p>
-          </div>
-          <div class="product-bottom">
-            <div class="price">৳1,070</div>
-            <a
-              href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20the%20Premium%20Mosquito%20Net%20in%20Dark%20Pink."
-              target="_blank"
-              class="order-small"
-            >
-              Order
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Premium Pink -->
-      <article class="product-card">
-        <div class="product-image">
-          <img src="Premium-mosquito-net-pink.jpeg" alt="Premium Mosquito Net Pink">
-        </div>
-        <div class="product-info">
-          <div>
-            <div class="tag">PREMIUM</div>
-            <h3>Premium Net — Pink</h3>
-            <p>Sizes: 5 × 7 ft · 6 × 7 ft</p>
-          </div>
-          <div class="product-bottom">
-            <div class="price">৳1,070</div>
-            <a
-              href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20the%20Premium%20Mosquito%20Net%20in%20Pink."
-              target="_blank"
-              class="order-small"
-            >
-              Order
-            </a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-
-    <!-- PRINTED SERIES -->
-    <h3 class="category-heading">Printed Series</h3>
-    <div class="products">
-
-      <!-- Printed Mint -->
-      <article class="product-card">
-        <div class="product-image">
-          <img src="Printed-mosquito-net-mint.jpeg" alt="Printed Mosquito Net Mint">
-        </div>
-        <div class="product-info">
-          <div>
-            <div class="tag">BEST VALUE</div>
-            <h3>Printed Net — Mint</h3>
-            <p>Size: 6 × 7 ft</p>
-          </div>
-          <div class="product-bottom">
-            <div class="price">৳699</div>
-            <a
-              href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20the%20Printed%20Mosquito%20Net%20in%20Mint."
-              target="_blank"
-              class="order-small"
-            >
-              Order
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Printed Pink -->
-      <article class="product-card">
-        <div class="product-image">
-          <img src="Printed-mosquito-net-pink.jpeg" alt="Printed Mosquito Net Pink">
-        </div>
-        <div class="product-info">
-          <div>
-            <div class="tag">BEST VALUE</div>
-            <h3>Printed Net — Pink</h3>
-            <p>Size: 6 × 7 ft</p>
-          </div>
-          <div class="product-bottom">
-            <div class="price">৳699</div>
-            <a
-              href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20the%20Printed%20Mosquito%20Net%20in%20Pink."
-              target="_blank"
-              class="order-small"
-            >
-              Order
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Printed Light Pink -->
-      <article class="product-card">
-        <div class="product-image">
-          <img src="Printed-mosquito-net-light-pink.jpeg" alt="Printed Mosquito Net Light Pink">
-        </div>
-        <div class="product-info">
-          <div>
-            <div class="tag">BEST VALUE</div>
-            <h3>Printed Net — Light Pink</h3>
-            <p>Size: 6 × 7 ft</p>
-          </div>
-          <div class="product-bottom">
-            <div class="price">৳699</div>
-            <a
-              href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20the%20Printed%20Mosquito%20Net%20in%20Light%20Pink."
-              target="_blank"
-              class="order-small"
-            >
-              Order
-            </a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-
   </section>
 
-  <!-- BENEFITS -->
-  <section class="content mint-section">
+  <!-- PRODUCTS SECTION -->
+  <section id="products" class="py-16 sm:py-24 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-brandNavy tracking-tight">
+          Select Your Mosquito Net
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-2">
+          Click any color button below to preview the actual photo. Click the green order button to place your order directly on WhatsApp!
+        </p>
+      </div>
 
-    <div class="section-title">
-      <p class="eyebrow">WHY ACTIVE BD ONLINE</p>
-      <h2>Made for better nights.</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+
+        <!-- PRODUCT 1: PRINTED MOSQUITO NET -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
+          <!-- Image area -->
+          <div class="relative bg-slate-100 aspect-square sm:aspect-[4/3] overflow-hidden">
+            <img 
+              id="printed-preview-img" 
+              src="Printed_mosquito_net_Baby_pink.jpeg" 
+              alt="Printed Mosquito Net" 
+              class="w-full h-full object-cover object-center transition-all duration-300"
+            />
+            <div class="absolute top-3 left-3 bg-brandNavy text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+              Standard Edition
+            </div>
+            <div id="printed-badge" class="absolute bottom-3 left-3 bg-white/90 backdrop-blur text-brandNavy text-xs font-bold px-3 py-1 rounded-md shadow-sm">
+              Color: Baby Pink
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-start justify-between gap-2 mb-2">
+                <h3 class="text-xl font-bold text-brandNavy">Printed Mosquito Net</h3>
+                <span class="text-2xl font-black text-brandNavy">৳699</span>
+              </div>
+              <p class="text-xs text-slate-500 mb-4">
+                Beautiful printed designs that add charm to your bedroom while providing reliable mosquito protection.
+              </p>
+
+              <!-- Size Spec -->
+              <div class="mb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-1">Available Size</span>
+                <span class="inline-block px-3 py-1 bg-slate-100 text-slate-800 text-xs font-bold rounded-lg border border-slate-200">
+                  6 × 7 ft (King Size)
+                </span>
+              </div>
+
+              <!-- Color Selector -->
+              <div class="mb-6">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-2">Select Color Photo</span>
+                <div class="flex flex-wrap gap-2">
+                  
+                  <button 
+                    type="button"
+                    onclick="switchPrintedColor('Baby Pink', 'Printed_mosquito_net_Baby_pink.jpeg')" 
+                    class="printed-color-btn px-3 py-1.5 rounded-lg border-2 border-brandNavy bg-pink-50 text-slate-800 text-xs font-bold flex items-center gap-1.5 shadow-sm">
+                    <span class="w-3 h-3 rounded-full bg-pink-300"></span>
+                    Baby Pink
+                  </button>
+
+                  <button 
+                    type="button"
+                    onclick="switchPrintedColor('Mint', 'Printed_mosquito_net_Mint.jpeg')" 
+                    class="printed-color-btn px-3 py-1.5 rounded-lg border border-slate-300 bg-white text-slate-700 text-xs font-bold flex items-center gap-1.5 hover:border-slate-400">
+                    <span class="w-3 h-3 rounded-full bg-emerald-300"></span>
+                    Mint
+                  </button>
+
+                  <button 
+                    type="button"
+                    onclick="switchPrintedColor('Dark Pink', 'Printed_mosquito_net_Dark_pink.jpeg')" 
+                    class="printed-color-btn px-3 py-1.5 rounded-lg border border-slate-300 bg-white text-slate-700 text-xs font-bold flex items-center gap-1.5 hover:border-slate-400">
+                    <span class="w-3 h-3 rounded-full bg-pink-600"></span>
+                    Dark Pink
+                  </button>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- WhatsApp Order Button -->
+            <a 
+              id="printed-wa-btn"
+              href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20to%20order%20the%20Printed%20Mosquito%20Net,%20Size:%206%C3%977%20ft,%20Color:%20Baby%20Pink.%20Please%20confirm%20availability." 
+              target="_blank" 
+              class="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-brandGreen text-white font-bold text-sm shadow hover:bg-emerald-600 transition active:scale-95">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>Order Printed Net (৳699)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- PRODUCT 2: PREMIUM MOSQUITO NET -->
+        <div class="bg-white rounded-2xl shadow-sm border-2 border-brandNavy/20 overflow-hidden flex flex-col relative">
+          
+          <div class="absolute top-3 right-3 z-10 bg-amber-500 text-white text-[11px] font-black px-3 py-1 rounded-full shadow">
+            PREMIUM QUALITY
+          </div>
+
+          <!-- Image area -->
+          <div class="relative bg-slate-100 aspect-square sm:aspect-[4/3] overflow-hidden">
+            <img 
+              id="premium-preview-img" 
+              src="Premium_mosquito_net_Dark_pink.jpeg" 
+              alt="Premium Mosquito Net" 
+              class="w-full h-full object-cover object-center transition-all duration-300"
+            />
+            <div id="premium-badge" class="absolute bottom-3 left-3 bg-white/90 backdrop-blur text-brandNavy text-xs font-bold px-3 py-1 rounded-md shadow-sm">
+              Color: Dark Pink
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-start justify-between gap-2 mb-2">
+                <div>
+                  <h3 class="text-xl font-bold text-brandNavy">Premium Mosquito Net</h3>
+                  <span class="text-xs text-brandMint font-bold">Extra Strong Fabric & Fine Mesh</span>
+                </div>
+                <span class="text-2xl font-black text-brandNavy">৳1,070</span>
+              </div>
+              <p class="text-xs text-slate-500 mb-4">
+                Heavy-grade durability, reinforced border stitching, and superior airflow. Built to last for years.
+              </p>
+
+              <!-- Size selector -->
+              <div class="mb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-1.5">Select Size</span>
+                <div class="flex gap-2">
+                  <button 
+                    type="button" 
+                    id="size-btn-6x7"
+                    onclick="selectPremiumSize('6×7 ft')" 
+                    class="px-3 py-1.5 rounded-lg border-2 border-brandNavy bg-brandNavy text-white text-xs font-bold transition">
+                    6 × 7 ft (King)
+                  </button>
+                  <button 
+                    type="button" 
+                    id="size-btn-5x7"
+                    onclick="selectPremiumSize('5×7 ft')" 
+                    class="px-3 py-1.5 rounded-lg border border-slate-300 bg-white text-slate-700 text-xs font-bold hover:border-slate-400 transition">
+                    5 × 7 ft (Queen)
+                  </button>
+                </div>
+              </div>
+
+              <!-- Color selector -->
+              <div class="mb-6">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-2">Select Color Photo</span>
+                <div class="flex flex-wrap gap-2">
+                  
+                  <button 
+                    type="button"
+                    onclick="switchPremiumColor('Dark Pink', 'Premium_mosquito_net_Dark_pink.jpeg')" 
+                    class="premium-color-btn px-3 py-1.5 rounded-lg border-2 border-brandNavy bg-pink-50 text-slate-800 text-xs font-bold flex items-center gap-1.5 shadow-sm">
+                    <span class="w-3 h-3 rounded-full bg-pink-600"></span>
+                    Dark Pink
+                  </button>
+
+                  <button 
+                    type="button"
+                    onclick="switchPremiumColor('Baby Pink', 'Premium_mosquito_net_Baby_pink.jpeg')" 
+                    class="premium-color-btn px-3 py-1.5 rounded-lg border border-slate-300 bg-white text-slate-700 text-xs font-bold flex items-center gap-1.5 hover:border-slate-400">
+                    <span class="w-3 h-3 rounded-full bg-pink-300"></span>
+                    Baby Pink
+                  </button>
+
+                  <button 
+                    type="button"
+                    onclick="switchPremiumColor('Orange', 'Premium_mosquito_net_Orange.jpeg')" 
+                    class="premium-color-btn px-3 py-1.5 rounded-lg border border-slate-300 bg-white text-slate-700 text-xs font-bold flex items-center gap-1.5 hover:border-slate-400">
+                    <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+                    Orange
+                  </button>
+
+                  <button 
+                    type="button"
+                    onclick="switchPremiumColor('Mint', 'Printed_mosquito_net_Mint.jpeg')" 
+                    class="premium-color-btn px-3 py-1.5 rounded-lg border border-slate-300 bg-white text-slate-700 text-xs font-bold flex items-center gap-1.5 hover:border-slate-400">
+                    <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+                    Mint
+                  </button>
+
+                  <button 
+                    type="button"
+                    onclick="switchPremiumColor('Olive', 'Premium_mosquito_net_Dark_pink.jpeg')" 
+                    class="premium-color-btn px-3 py-1.5 rounded-lg border border-slate-300 bg-white text-slate-700 text-xs font-bold flex items-center gap-1.5 hover:border-slate-400">
+                    <span class="w-3 h-3 rounded-full bg-lime-700"></span>
+                    Olive
+                  </button>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- WhatsApp Order Button -->
+            <a 
+              id="premium-wa-btn"
+              href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20to%20order%20the%20Premium%20Mosquito%20Net,%20Size:%206%C3%977%20ft,%20Color:%20Dark%20Pink.%20Please%20confirm%20availability." 
+              target="_blank" 
+              class="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-brandGreen text-white font-bold text-sm shadow hover:bg-emerald-600 transition active:scale-95">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>Order Premium Net (৳1,070)</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
     </div>
-
-    <div class="benefits">
-
-      <div class="benefit">
-        <div class="benefit-number">01</div>
-        <h3>Easy to set up</h3>
-        <p>Practical mosquito nets designed for everyday use.</p>
-      </div>
-
-      <div class="benefit">
-        <div class="benefit-number">02</div>
-        <h3>Comfort first</h3>
-        <p>Keep your sleeping space protected and comfortable.</p>
-      </div>
-
-      <div class="benefit">
-        <div class="benefit-number">03</div>
-        <h3>Delivered nationwide</h3>
-        <p>We deliver across Bangladesh.</p>
-      </div>
-
-      <div class="benefit">
-        <div class="benefit-number">04</div>
-        <h3>Cash on Delivery</h3>
-        <p>Pay when your order arrives.</p>
-      </div>
-
-    </div>
-
   </section>
 
   <!-- HOW TO ORDER -->
-  <section class="content">
+  <section class="py-16 bg-white border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <span class="text-xs font-bold text-brandMint uppercase tracking-wider">Fast & Easy Ordering</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-brandNavy mt-1">How to Order</h2>
+      </div>
 
-    <div class="section-title">
-      <p class="eyebrow">HOW TO ORDER</p>
-      <h2>Three easy steps.</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center relative">
+        <!-- Step 1 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+          <div class="w-12 h-12 mx-auto rounded-full bg-brandNavy text-white flex items-center justify-center font-black text-lg mb-4">
+            1
+          </div>
+          <h3 class="text-base font-bold text-slate-900 mb-1">Pick Net & Color</h3>
+          <p class="text-xs text-slate-500">
+            Select Printed (৳699) or Premium (৳1,070) along with your favorite color and size.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+          <div class="w-12 h-12 mx-auto rounded-full bg-brandGreen text-white flex items-center justify-center font-black text-lg mb-4">
+            2
+          </div>
+          <h3 class="text-base font-bold text-slate-900 mb-1">Send on WhatsApp</h3>
+          <p class="text-xs text-slate-500">
+            Click order to open WhatsApp. Just reply with your delivery address and phone number.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+          <div class="w-12 h-12 mx-auto rounded-full bg-brandMint text-white flex items-center justify-center font-black text-lg mb-4">
+            3
+          </div>
+          <h3 class="text-base font-bold text-slate-900 mb-1">Pay on Delivery</h3>
+          <p class="text-xs text-slate-500">
+            Receive the parcel at your door, check the item, and pay cash to the rider.
+          </p>
+        </div>
+      </div>
     </div>
-
-    <div class="steps">
-
-      <div class="step">
-        <div class="step-number">1</div>
-        <h3>Choose</h3>
-        <p>Pick your net, size and color.</p>
-      </div>
-
-      <div class="step">
-        <div class="step-number">2</div>
-        <h3>WhatsApp</h3>
-        <p>Send your order details to us.</p>
-      </div>
-
-      <div class="step">
-        <div class="step-number">3</div>
-        <h3>Receive</h3>
-        <p>Confirm your address and receive by COD.</p>
-      </div>
-
-    </div>
-
   </section>
 
-  <!-- DELIVERY -->
-  <section class="content delivery">
+  <!-- DELIVERY & PAYMENT DETAILS -->
+  <section id="delivery" class="py-14 bg-slate-100">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="bg-white rounded-2xl p-6 sm:p-10 border border-slate-200 shadow-sm">
+        
+        <h2 class="text-xl sm:text-2xl font-extrabold text-brandNavy text-center mb-6">
+          Delivery Charges & Payment Policy
+        </h2>
 
-    <div class="section-title">
-      <p class="eyebrow">DELIVERY & PAYMENT</p>
-      <h2>Simple and clear.</h2>
-    </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <!-- Dhaka -->
+          <div class="border border-slate-200 rounded-xl p-4 bg-slate-50 text-center">
+            <span class="text-xs font-bold text-brandMint uppercase tracking-wider block">Inside Dhaka</span>
+            <span class="text-3xl font-extrabold text-brandNavy block my-1">৳70</span>
+            <span class="text-xs text-slate-500">Delivery in 1-2 business days</span>
+          </div>
 
-    <div class="delivery-box">
+          <!-- Outside Dhaka -->
+          <div class="border border-slate-200 rounded-xl p-4 bg-slate-50 text-center">
+            <span class="text-xs font-bold text-brandMint uppercase tracking-wider block">Outside Dhaka (All Bangladesh)</span>
+            <span class="text-3xl font-extrabold text-brandNavy block my-1">৳150</span>
+            <span class="text-xs text-slate-500">Delivery in 3-5 business days</span>
+          </div>
+        </div>
 
-      <div class="delivery-card">
-        <h3>🚚 Delivery</h3>
-        <p>Inside Dhaka: <strong>৳70</strong></p>
-        <p>Outside Dhaka: <strong>৳150</strong></p>
+        <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 flex items-center gap-3">
+          <div class="text-2xl">💵</div>
+          <div>
+            <h3 class="text-sm font-bold text-emerald-900">100% Cash on Delivery (COD)</h3>
+            <p class="text-xs text-emerald-800">
+              No advance payment required. Pay directly to the delivery person after inspecting your package.
+            </p>
+          </div>
+        </div>
+
       </div>
-
-      <div class="delivery-card">
-        <h3>💵 Payment</h3>
-        <p><strong>Cash on Delivery</strong> available.</p>
-        <p>No online payment required.</p>
-      </div>
-
     </div>
-
   </section>
 
-  <!-- FAQ -->
-  <section class="content faq">
+  <!-- FAQ SECTION -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-brandNavy">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">Clear answers to help you choose</p>
+      </div>
 
-    <div class="section-title">
-      <p class="eyebrow">FAQ</p>
-      <h2>Quick answers.</h2>
+      <div class="space-y-3">
+        <details class="group bg-slate-50 p-4 rounded-xl border border-slate-200 cursor-pointer">
+          <summary class="font-bold text-sm text-slate-800 flex justify-between items-center list-none">
+            <span>What is the difference between Printed and Premium nets?</span>
+            <span class="text-brandMint transition group-open:rotate-180">▼</span>
+          </summary>
+          <p class="text-xs sm:text-sm text-slate-600 mt-2.5 leading-relaxed">
+            The Printed net (৳699) features attractive patterns and standard fine netting. The Premium net (৳1,070) uses heavier, extra-fine high-density mesh with reinforced border stitching for extra durability and longevity.
+          </p>
+        </details>
+
+        <details class="group bg-slate-50 p-4 rounded-xl border border-slate-200 cursor-pointer">
+          <summary class="font-bold text-sm text-slate-800 flex justify-between items-center list-none">
+            <span>Will a 6×7 ft net fit my bed?</span>
+            <span class="text-brandMint transition group-open:rotate-180">▼</span>
+          </summary>
+          <p class="text-xs sm:text-sm text-slate-600 mt-2.5 leading-relaxed">
+            Yes! 6×7 ft is the standard King / Family bed size widely used in Bangladesh. If you have a slightly smaller Queen bed, our 5×7 ft Premium option is also available.
+          </p>
+        </details>
+
+        <details class="group bg-slate-50 p-4 rounded-xl border border-slate-200 cursor-pointer">
+          <summary class="font-bold text-sm text-slate-800 flex justify-between items-center list-none">
+            <span>Can I inspect the parcel upon delivery?</span>
+            <span class="text-brandMint transition group-open:rotate-180">▼</span>
+          </summary>
+          <p class="text-xs sm:text-sm text-slate-600 mt-2.5 leading-relaxed">
+            Yes, you can check the parcel upon delivery before making payment to the delivery rider.
+          </p>
+        </details>
+      </div>
     </div>
+  </section>
 
-    <details>
-      <summary>Do you offer Cash on Delivery?</summary>
-      <p>Yes. Cash on Delivery is available.</p>
-    </details>
-
-    <details>
-      <summary>How much is delivery?</summary>
-      <p>Delivery is ৳70 inside Dhaka and ৳150 outside Dhaka.</p>
-    </details>
-
-    <details>
-      <summary>How do I place an order?</summary>
-      <p>
-        Tap any Order button, choose your size/color, and send your order through WhatsApp.
+  <!-- BOTTOM WHATSAPP CTA -->
+  <section class="py-14 bg-gradient-to-r from-brandNavy to-brandNavyDark text-white text-center">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl sm:text-3xl font-extrabold mb-3">
+        Ready for a peaceful, bite-free sleep?
+      </h2>
+      <p class="text-slate-300 text-sm mb-6">
+        Order today and protect your family. Message us directly on WhatsApp for quick confirmation.
       </p>
-    </details>
-
-    <details>
-      <summary>What sizes are available?</summary>
-      <p>
-        Printed Mosquito Net: 6 × 7 ft.<br>
-        Premium Mosquito Net: 5 × 7 ft and 6 × 7 ft.
-      </p>
-    </details>
-
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="final-cta">
-
-    <p class="eyebrow">READY TO ORDER?</p>
-
-    <h2>
-      Protect your sleep<br>
-      without the hassle.
-    </h2>
-
-    <a
-      href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20to%20place%20an%20order."
-      target="_blank"
-      class="button primary"
-    >
-      Order on WhatsApp →
-    </a>
-
+      <a 
+        href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20to%20place%20an%20order%20for%20a%20mosquito%20net." 
+        target="_blank" 
+        class="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-brandGreen text-white font-bold text-base shadow-xl hover:bg-emerald-600 transition active:scale-95">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        <span>Chat on WhatsApp (01715985885)</span>
+      </a>
+    </div>
   </section>
 
   <!-- FOOTER -->
-  <footer>
-
-    <div>
-      <div class="logo" style="color:white;">
-        Active <span>BD</span> Online
+  <footer class="bg-slate-900 text-slate-400 py-10 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+      <div>
+        <p class="text-white font-extrabold text-lg">Active BD Online</p>
+        <p class="text-xs text-slate-400 mt-1">Premium mosquito nets in Bangladesh • Cash on Delivery</p>
       </div>
-      <p>Premium mosquito nets · Bangladesh</p>
-      <p>COD available nationwide</p>
-    </div>
 
-    <div>
-      <p>📞 WhatsApp: 01715-985885</p>
-      <p>
-        <a
-          href="https://www.facebook.com/share/1BmQgSXAwW/"
-          target="_blank"
-        >
-          Facebook
+      <div class="flex items-center gap-6 text-sm">
+        <a 
+          href="https://wa.me/8801715985885" 
+          target="_blank" 
+          class="hover:text-brandGreen flex items-center gap-1.5 transition">
+          <span>WhatsApp: 01715985885</span>
         </a>
-      </p>
+        <a 
+          href="https://www.facebook.com/share/1BmQgSXAwW/" 
+          target="_blank" 
+          class="hover:text-blue-400 flex items-center gap-1.5 transition">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.657 5H18V0h-3.808C10.597 0 9 1.582 9 4.615V8z"/></svg>
+          <span>Facebook Page</span>
+        </a>
+      </div>
     </div>
-
   </footer>
 
+  <!-- FLOATING WHATSAPP BUTTON (MOBILE & DESKTOP) -->
+  <a 
+    href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20to%20order%20a%20mosquito%20net." 
+    target="_blank"
+    class="fixed bottom-5 right-5 z-50 bg-brandGreen text-white p-3.5 sm:p-4 rounded-full shadow-2xl hover:bg-emerald-600 transition duration-200 flex items-center justify-center hover:scale-110 active:scale-95"
+    aria-label="Order on WhatsApp">
+    <svg class="w-7 h-7 sm:w-8 sm:h-8 fill-current" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  </a>
+
+  <script>
+    // Auto-detect logo name variations (logo, logo.png, logo.jpg, logo.jpeg, logo.webp)
+    const logoAttempts = ['logo', 'logo.png', 'logo.jpg', 'logo.jpeg', 'logo.webp'];
+    let currentLogoIndex = 0;
+    
+    function handleLogoLoadError(img) {
+      if (currentLogoIndex < logoAttempts.length) {
+        img.src = logoAttempts[currentLogoIndex++];
+      } else {
+        img.style.display = 'none';
+        const fallback = document.getElementById('text-logo-fallback');
+        if (fallback) fallback.style.display = 'flex';
+      }
+    }
+
+    // State for Printed Net
+    let selectedPrintedColor = 'Baby Pink';
+    
+    function switchPrintedColor(colorName, imageSrc) {
+      selectedPrintedColor = colorName;
+      document.getElementById('printed-preview-img').src = imageSrc;
+      document.getElementById('printed-badge').innerText = 'Color: ' + colorName;
+      
+      // Update WhatsApp URL
+      const text = encodeURIComponent(`Hi Active BD Online! I want to order the Printed Mosquito Net, Size: 6×7 ft, Color: ${colorName}. Please confirm availability.`);
+      document.getElementById('printed-wa-btn').href = `https://wa.me/8801715985885?text=${text}`;
+      
+      // Update button styling
+      const buttons = document.querySelectorAll('.printed-color-btn');
+      buttons.forEach(btn => {
+        if (btn.innerText.includes(colorName)) {
+          btn.className = 'printed-color-btn px-3 py-1.5 rounded-lg border-2 border-brandNavy bg-pink-50 text-slate-800 text-xs font-bold flex items-center gap-1.5 shadow-sm';
+        } else {
+          btn.className = 'printed-color-btn px-3 py-1.5 rounded-lg border border-slate-300 bg-white text-slate-700 text-xs font-bold flex items-center gap-1.5 hover:border-slate-400';
+        }
+      });
+    }
+
+    // State for Premium Net
+    let selectedPremiumColor = 'Dark Pink';
+    let selectedPremiumSize = '6×7 ft';
+
+    function updatePremiumWhatsAppLink() {
+      const text = encodeURIComponent(`Hi Active BD Online! I want to order the Premium Mosquito Net, Size: ${selectedPremiumSize}, Color: ${selectedPremiumColor}. Please confirm availability.`);
+      document.getElementById('premium-wa-btn').href = `https://wa.me/8801715985885?text=${text}`;
+    }
+
+    function switchPremiumColor(colorName, imageSrc) {
+      selectedPremiumColor = colorName;
+      document.getElementById('premium-preview-img').src = imageSrc;
+      document.getElementById('premium-badge').innerText = 'Color: ' + colorName;
+      
+      updatePremiumWhatsAppLink();
+
+      // Update button styling
+      const buttons = document.querySelectorAll('.premium-color-btn');
+      buttons.forEach(btn => {
+        if (btn.innerText.includes(colorName)) {
+          btn.className = 'premium-color-btn px-3 py-1.5 rounded-lg border-2 border-brandNavy bg-pink-50 text-slate-800 text-xs font-bold flex items-center gap-1.5 shadow-sm';
+        } else {
+          btn.className = 'premium-color-btn px-3 py-1.5 rounded-lg border border-slate-300 bg-white text-slate-700 text-xs font-bold flex items-center gap-1.5 hover:border-slate-400';
+        }
+      });
+    }
+
+    function selectPremiumSize(size) {
+      selectedPremiumSize = size;
+      const btn6x7 = document.getElementById('size-btn-6x7');
+      const btn5x7 = document.getElementById('size-btn-5x7');
+
+      if (size === '6×7 ft') {
+        btn6x7.className = 'px-3 py-1.5 rounded-lg border-2 border-brandNavy bg-brandNavy text-white text-xs font-bold transition';
+        btn5x7.className = 'px-3 py-1.5 rounded-lg border border-slate-300 bg-white text-slate-700 text-xs font-bold hover:border-slate-400 transition';
+      } else {
+        btn5x7.className = 'px-3 py-1.5 rounded-lg border-2 border-brandNavy bg-brandNavy text-white text-xs font-bold transition';
+        btn6x7.className = 'px-3 py-1.5 rounded-lg border border-slate-300 bg-white text-slate-700 text-xs font-bold hover:border-slate-400 transition';
+      }
+
+      updatePremiumWhatsAppLink();
+    }
+  </script>
 </body>
 </html>
