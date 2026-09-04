@@ -200,21 +200,24 @@
       background: #1da851;
       transform: translateY(-2px);
     }
-    .hero-image-wrap {
+    
+    /* Hero Video Embed */
+    .hero-video-wrap {
       position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: var(--shadow-lg);
-      background: #fff;
-      aspect-ratio: 1/1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: #000;
     }
-    .hero-image-wrap img {
+    .hero-video-wrap iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      border: 0;
     }
 
     /* Products Section */
@@ -489,7 +492,6 @@
   <header class="navbar">
     <div class="container nav-content">
       <a href="#" class="logo-link">
-        <!-- Logo auto-loads your uploaded file named 'logo' -->
         <img src="logo" alt="Active BD Online Logo" class="logo-img" onerror="this.src='logo.jpeg';">
       </a>
       <a href="#products" class="btn-nav">Shop Now</a>
@@ -517,14 +519,19 @@
           <p class="hero-subtitle">High-quality, long-lasting mosquito nets crafted for refreshing, peaceful sleep. Starting from only ৳699.</p>
           <div class="hero-actions">
             <a href="#products" class="btn-primary">View Nets</a>
-            <a href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20to%20order%20a%20mosquito%20net.%20Please%20show%20me%20the%20details." class="btn-whatsapp">
+            <a href="https://wa.me/8801715985885?text=Hi%20Active%20BD%20Online!%20I%20want%20to%20order%20a%20mosquito%20net.%20Please%20show%20me%20the%20details." class="btn-whatsapp" target="_blank">
               Order on WhatsApp
             </a>
           </div>
         </div>
-        <div class="hero-image-wrap">
-          <!-- Uses your exact uploaded file -->
-          <img id="hero-img" src="Premium_mosquito_net_Dark_pink.jpeg.jpeg" alt="Active BD Online Premium Mosquito Net">
+        <!-- YouTube Video Embed -->
+        <div class="hero-video-wrap">
+          <iframe 
+            src="https://www.youtube.com/embed/r8QqXIOJzyM" 
+            title="Active BD Online Mosquito Net Video" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
     </section>
@@ -541,7 +548,7 @@
         <!-- Product 1: Printed Mosquito Net -->
         <div class="product-card">
           <div class="product-gallery">
-            <img id="printed-img" src="Printed_mosquito_net_Baby_pink.jpeg.jpeg" alt="Printed Mosquito Net">
+            <img id="printed-img" src="Printed_mosquito_net_Baby_pink.jpeg.jpeg" alt="Printed Mosquito Net" onerror="imgFallback(this)">
             <div class="price-tag">৳699</div>
           </div>
           <div class="product-details">
@@ -564,7 +571,7 @@
                 <button class="pill color-pill" onclick="changeColor('printed', 'Mint', 'Printed_mosquito_net_Mint.jpeg.jpeg', this)">
                   <span class="color-dot" style="background:#a2e8dd;"></span> Mint
                 </button>
-                <button class="pill color-pill" onclick="changeColor('printed', 'Dark Pink', 'Printed_mosquito_net_Baby_pink.jpeg.jpeg', this)">
+                <button class="pill color-pill" onclick="changeColor('printed', 'Dark Pink', 'Printed_mosquito_net_Dark_pink.jpeg.jpeg', this)">
                   <span class="color-dot" style="background:#e75480;"></span> Dark Pink
                 </button>
               </div>
@@ -579,7 +586,7 @@
         <!-- Product 2: Premium Mosquito Net -->
         <div class="product-card">
           <div class="product-gallery">
-            <img id="premium-img" src="Premium_mosquito_net_Dark_pink.jpeg.jpeg" alt="Premium Mosquito Net">
+            <img id="premium-img" src="Premium_mosquito_net_Dark_pink.jpeg.jpeg" alt="Premium Mosquito Net" onerror="imgFallback(this)">
             <div class="price-tag">৳1,070</div>
           </div>
           <div class="product-details">
@@ -606,10 +613,7 @@
                 <button class="pill color-pill" onclick="changeColor('premium', 'Orange', 'Premium_mosquito_net_Orange.jpeg.jpeg', this)">
                   <span class="color-dot" style="background:#ffa500;"></span> Orange
                 </button>
-                <button class="pill color-pill" onclick="changeColor('premium', 'Mint', 'Printed_mosquito_net_Mint.jpeg.jpeg', this)">
-                  <span class="color-dot" style="background:#a2e8dd;"></span> Mint
-                </button>
-                <button class="pill color-pill" onclick="changeColor('premium', 'Olive', 'Premium_mosquito_net_Dark_pink.jpeg.jpeg', this)">
+                <button class="pill color-pill" onclick="changeColor('premium', 'Olive', 'Premium_mosquito_net_Olive.jpeg.jpeg', this)">
                   <span class="color-dot" style="background:#708238;"></span> Olive
                 </button>
               </div>
@@ -746,21 +750,31 @@
     let premiumCurrentSize = '6 × 7 ft';
     let premiumCurrentColor = 'Dark Pink';
 
+    // Auto-correct filenames whether saved as .jpeg.jpeg or .jpeg
+    function imgFallback(img) {
+      if (!img.dataset.triedFallback) {
+        img.dataset.triedFallback = "1";
+        if (img.src.includes(".jpeg.jpeg")) {
+          img.src = img.src.replace(".jpeg.jpeg", ".jpeg");
+        } else if (img.src.includes(".jpeg")) {
+          img.src = img.src.replace(".jpeg", ".jpeg.jpeg");
+        }
+      }
+    }
+
     function changeColor(product, colorName, imageUrl, button) {
-      // Update image
       const imgElem = document.getElementById(product + '-img');
       if (imgElem) {
+        imgElem.dataset.triedFallback = "";
         imgElem.src = imageUrl;
       }
 
-      // Update active button state
       const container = document.getElementById(product + '-colors');
       if (container) {
         container.querySelectorAll('.pill').forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
       }
 
-      // Update WhatsApp Order Link
       if (product === 'printed') {
         const msg = `Hi Active BD Online! I want to order the Printed Mosquito Net, Size: 6x7 ft, Color: ${colorName}. Please confirm availability.`;
         document.getElementById('printed-btn').href = `https://wa.me/8801715985885?text=${encodeURIComponent(msg)}`;
